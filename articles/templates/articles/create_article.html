@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form id="post_form" method="post" action="{% url 'articles:create_article' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Article title</p>
+        {{ postForm.title }}
+        <p>Article content</p>
+        {{ postForm.content }}
+        <p>Date of the article</p>
+        {{ postForm.created_at }}
+        <button type="submit" class="btn-success">Submit</button>
+    </form>
+</body>
+</html>

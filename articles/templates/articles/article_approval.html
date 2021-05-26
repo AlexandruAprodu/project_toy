@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for article in pending_articles %}
+        <h2>ID: {{ article.id }}</h2>
+       <h3>{{ article.title }}</h3>
+        <p>{{ article.content }}</p>
+        <small>{{ article.date }}</small>
+        <p>{{ article.status }}</p>
+        <a href="{% url 'articles:reject_article' article.id %}"><button type="submit" class="btn-success">REJECT</button></a>
+        <a href="{% url 'articles:accept_article' article.id %}"><button type="submit" class="btn-success">APPROVE</button></a>
+        <br/>
+        <br/>
+
+
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <form id="post_form" method="post" action="{{ request.get_full_path }}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Article title</p>
+        {{ postForm.title }}
+        <p>Article content</p>
+        {{ postForm.content }}
+        <fieldset disabled="disabled">{{ postForm.status }}</fieldset>
+        <button type="submit" class="btn-success">Submit</button>
+    </form>
+</body>
+</html>

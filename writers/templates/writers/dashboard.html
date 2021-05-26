@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    th {
+        text-align: left;
+    }
+</style>
+
+<table>
+    <thead>
+        <th>NAME</th>
+        <th>ARTICLES</th>
+        <th>ARTICLES LAST 30 DAYS</th>
+    </thead>
+    <tbody>
+    {% for writer in writers %}
+        <tr>
+            <td>{{ writer.written_by__name__username }}</td>
+            <td>{{ writer.id__count }}</td>
+            <td>{{ writer.count_last_30 }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+
+{#    {{ writer.written_by.title }}#}
+</body>
+</html>
